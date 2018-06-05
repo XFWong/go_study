@@ -9,6 +9,8 @@ func main() {
 }
 
 func f1() {
+	var b = false
+	println("\t", b)
 	a := "O"
 	print(a)
 	f2()
