@@ -3,14 +3,14 @@ package main
 
 import (
 	"fmt"
-	// "os"
-	// "runtime"
+	"os"
+	"runtime"
 )
 
 func main() {
-	// var goos string = runtime.GOOS
-	// fmt.Printf("The operating system is: %s\n", goos)
-	// path := os.Getenv("PATH")
-	// fmt.Printf("Path is %s\n", path)
+	var goos string = runtime.GOOS
+	fmt.Printf("The operating system is: %s\n", goos)
+	path := os.Getenv("PATH")
+	fmt.Printf("Path is %s\n", path)
 	fmt.Println("hello world")
 }
