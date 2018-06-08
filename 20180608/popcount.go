@@ -59,11 +59,24 @@ func main() {
 			}
 		}
 	*/
-	// var s *string
-	// s = "hello!"
-	s := "hello"
-	t := &s
-	*t += "world"
-	// *s += "world!"
-	fmt.Println(s, *t)
+	/*
+		// var s *string
+		// s = "hello!"
+		s := "hello"
+		t := &s
+		*t += "world"
+		fmt.Println(s, *t)
+		*t = "test"
+		// *s += "world!"
+		fmt.Println(s, *t)
+	*/
+
+	var a [3]int = [3]int{23, 45, 67}
+	for i, v := range a {
+		fmt.Printf("%d, %d\n", i, v)
+	}
+	for i, v := range a {
+		fmt.Println(i, v)
+	}
+
 }
