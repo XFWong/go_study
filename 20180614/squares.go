@@ -26,4 +26,9 @@ func main() {
 	fmt.Println("******26******")
 	fmt.Println(f()) // "16"
 	fmt.Println("******28******")
+
+	f = squares()
+	fmt.Println("******31******")
+	fmt.Println(f()) // "1"
+	fmt.Println("******33******")
 }
