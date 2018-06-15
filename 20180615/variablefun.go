@@ -17,6 +17,15 @@ func main() {
 	q := geometry.Point{4, 5}
 	fmt.Println(geometry.Distance(p, q))
 	fmt.Println(p.Distance(q))
+
+	perim := geometry.Path{
+		{1, 1},
+		{5, 1},
+		{5, 4},
+	}
+	fmt.Println("*****line26******")
+	fmt.Println(perim.Distance())
+	fmt.Println("*****line28******")
 }
 
 func sum(values ...int) int {
