@@ -6,15 +6,32 @@ import (
 )
 
 func main() {
-	var pc [256]byte = func() (pc [256]byte) {
-		for i := range pc {
-			pc[i] = pc[i/2] + byte(i&1)
-		}
-		return
-	}()
-	for i := range pc {
-		fmt.Println(i)
+	ages := map[string]int{
+		"alice":   31,
+		"charlie": 34,
 	}
+	ages["bob"] = ages["bob"] + 1
+	fmt.Println(ages["bob"])
+	for name, age := range ages {
+		fmt.Printf("%s\t%d\n", name, age)
+	}
+	names := make([]string, 8, len(ages))
+	fmt.Println(names)
+	var runes []rune
+	for _, r := range "Hello, 世界" {
+		runes = append(runes, r)
+	}
+	fmt.Printf("%q\n", runes)
+	fmt.Println(runes)
+	// var pc [256]byte = func() (pc [256]byte) {
+	// 	for i := range pc {
+	// 		pc[i] = pc[i/2] + byte(i&1)
+	// 	}
+	// 	return
+	// }()
+	// for i := range pc {
+	// 	fmt.Println(i)
+	// }
 	go spinner(100 * time.Millisecond)
 	fmt.Println("go after spinner")
 	const n = 2
