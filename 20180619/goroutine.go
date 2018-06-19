@@ -6,9 +6,18 @@ import (
 )
 
 func main() {
+	var pc [256]byte = func() (pc [256]byte) {
+		for i := range pc {
+			pc[i] = pc[i/2] + byte(i&1)
+		}
+		return
+	}()
+	for i := range pc {
+		fmt.Println(i)
+	}
 	go spinner(100 * time.Millisecond)
 	fmt.Println("go after spinner")
-	const n = 45
+	const n = 2
 	fibN := fib(n) // slow
 	fmt.Printf("\rFibonacci(%d) = %d\n", n, fibN)
 }
