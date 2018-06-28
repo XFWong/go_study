@@ -17,18 +17,18 @@ func nonempty(strings []string) []string {
 	return strings[:i]
 }
 
-// func nonempty2(strings []string) []string {
-// 	out := strings[:0]
-// 	for d, s := range strings {
-// 		fmt.Println(d, i)
-// 		if s != "" {
-// 			strings[i] = s
-// 			i++
-// 		}
-// 	}
-// 	fmt.Printf("%d\n", i)
-// 	return strings[:i]
-// }
+func nonempty2(strings []string) []string {
+	out := strings[:0]
+	for d, s := range strings {
+		fmt.Println(d)
+		if s != "" {
+			out = append(out, s)
+			fmt.Println(out)
+		}
+	}
+
+	return out
+}
 
 func main() {
 	// 1.测试数组长度
@@ -38,6 +38,6 @@ func main() {
 	// fmt.Println(a)
 	// fmt.Println(len(a))
 	date := []string{"one", "", "three"}
-	fmt.Printf("%q\n", nonempty(date))
+	fmt.Printf("%q\n", nonempty2(date))
 	fmt.Printf("%q\n", date)
 }
