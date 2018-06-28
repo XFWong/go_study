@@ -15,7 +15,7 @@ func main() {
 	for name, age := range ages {
 		fmt.Printf("%s\t%d\n", name, age)
 	}
-	names := make([]string, 8, len(ages))
+	names := make([]string, 0, len(ages))
 	fmt.Println(names)
 	var runes []rune
 	for _, r := range "Hello, 世界" {
