@@ -33,14 +33,35 @@ func main() {
 	// 	fmt.Fprintf(os.Stderr, "dedup:%v\n", err)
 	// 	os.Exit(1)
 	// }
-
-	type address struct {
-		hostname string
-		port     int
+	//3
+	// type address struct {
+	// 	hostname string
+	// 	port     int
+	// }
+	// hits := make(map[address]int)
+	// hits[address{"golang.org", 443}] = 0
+	// for i, j := range hits {
+	// 	fmt.Println(i, j)
+	// }
+	type Point struct {
+		X, Y int
 	}
-	hits := make(map[address]int)
-	hits[address{"golang.org", 443}] = 0
-	for i, j := range hits {
-		fmt.Println(i, j)
+	type Circle struct {
+		Point
+		Radius int
 	}
+	type Wheel struct {
+		Circle
+		Spokes int
+	}
+	w := Wheel{Circle{Point{8, 8}, 5}, 20}
+	fmt.Printf("%#v", w)
+	w = Wheel{
+		Circle: Circle{
+			Point:  Point{X: 8, Y: 8},
+			Radius: 5,
+		},
+		Spokes: 30,
+	}
+	fmt.Printf("%#v", w)
 }
