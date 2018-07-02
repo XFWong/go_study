@@ -55,7 +55,7 @@ func main() {
 		Spokes int
 	}
 	w := Wheel{Circle{Point{8, 8}, 5}, 20}
-	fmt.Printf("%#v", w)
+	fmt.Printf("%#v\n", w)
 	w = Wheel{
 		Circle: Circle{
 			Point:  Point{X: 8, Y: 8},
@@ -63,5 +63,5 @@ func main() {
 		},
 		Spokes: 30,
 	}
-	fmt.Printf("%#v", w)
+	fmt.Printf("%#v\n", w)
 }
