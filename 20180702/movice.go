@@ -17,9 +17,16 @@ func main() {
 		{Title: "Cool Hand Luke", Year: 1967, Color: true, Actors: []string{"Paul Newman"}},
 		{Title: "Bullitt", Year: 1968, Color: true, Actors: []string{"Steve McQueen", "Jacqueline Bisset"}},
 	}
-	data, err := json.Marshal(movices)
+	//1.未格式化输出
+	// data, err := json.Marshal(movices)
+	// if err != nil {
+	// 	fmt.Printf("err code:%s", err)
+	// }
+	// fmt.Printf("%s\n", data)
+	// 2.格式化输出
+	data, err := json.MarshalIndent(movices, "", "    ")
 	if err != nil {
-		fmt.Printf("err code:%s", err)
+		fmt.Printf("errcode %d", err)
 	}
 	fmt.Printf("%s\n", data)
 }
